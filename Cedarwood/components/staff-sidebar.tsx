@@ -49,7 +49,7 @@ export function StaffSidebar() {
               )}
               <div className="ml-3 truncate">
                 <h2 className="text-lg font-semibold text-dark-gray truncate max-w-[140px]" title={school?.name}>
-                    {school?.name || "Cedarwood"}
+                    {school?.name || "..."}
                 </h2>
                 <p className="text-xs text-gray-500">Staff Portal</p>
               </div>
