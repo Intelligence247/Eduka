@@ -4,6 +4,19 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* Educa Primary Colors */
+  --primary-blue: #0A3D62;
+  --secondary-blue: #ADD8E6;
+  --accent-green: #3CB371;
+  --success-green: #4CAF50;
+  
+  /* Neutral Colors */
+  --white: #FFFFFF;
+  --light-gray: #F5F5F5;
+  --gray: #808080;
+  --dark-gray: #333333;
+  --black: #000000;
+
   --primary-50: #e8f1fc;
   --primary-100: #d1e3f9;
   --primary-200: #a3c7f3;
@@ -119,6 +132,15 @@
 @theme inline {
   --font-sans: var(--font-inter), "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback";
+
+  /* Educa Custom Colors */
+  --color-primary-blue: var(--primary-blue);
+  --color-secondary-blue: var(--secondary-blue);
+  --color-accent-green: var(--accent-green);
+  --color-success-green: var(--success-green);
+  --color-light-gray: var(--light-gray);
+  --color-gray: var(--gray);
+  --color-dark-gray: var(--dark-gray);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -225,4 +247,25 @@
     line-height: 1.4;
     font-weight: 600;
   }
+}
+
+/* Educa Custom utility classes */
+.btn-primary {
+  @apply bg-primary-blue text-white px-6 py-3 rounded-lg font-medium transition-colors hover:bg-primary-blue/90;
+}
+
+.btn-secondary {
+  @apply bg-secondary-blue text-primary-blue px-6 py-3 rounded-lg font-medium transition-colors hover:bg-secondary-blue/90;
+}
+
+.btn-outline {
+  @apply border border-secondary-blue text-secondary-blue bg-white px-6 py-3 rounded-lg font-medium transition-colors hover:bg-secondary-blue hover:text-white;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 rounded-lg border border-gray-300 bg-light-gray focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-transparent;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md p-6;
 }

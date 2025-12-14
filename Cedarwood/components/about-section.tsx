@@ -9,7 +9,7 @@ export function AboutSection() {
           <div className="relative">
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop"
+                src="https://www.cedarwoodschool.co.za/wp-content/uploads/2025/07/WhatsApp-Image-2025-02-25-at-06.32.05_07dd725f.jpg"
                 alt="Cedarwood International Academy campus"
                 className="w-full h-full object-cover"
               />

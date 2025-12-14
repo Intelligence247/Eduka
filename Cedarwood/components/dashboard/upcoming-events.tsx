@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Calendar, MapPin, Clock } from "lucide-react"
-import { staff } from "@/lib/mockSdk"
+import { staff } from "@/lib/sdk"
 
 export function UpcomingEvents() {
   const [events, setEvents] = useState<any[]>([])
@@ -13,11 +13,14 @@ export function UpcomingEvents() {
   useEffect(() => {
     staff.school.getEvents({
       params: { status: "upcoming" },
-      onSuccess: (data) => {
-        setEvents(data.data.slice(0, 3))
+      onSuccess: (data: any) => {
+        // API docs say: { status: "success", data: [...] }
+        if (data.status === "success" && Array.isArray(data.data)) {
+             setEvents(data.data.slice(0, 3))
+        }
         setLoading(false)
       },
-      onError: (error) => {
+      onError: (error: any) => {
         console.error("Failed to fetch events:", error)
         setLoading(false)
       },
